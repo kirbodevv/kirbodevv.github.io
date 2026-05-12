@@ -1,0 +1,15 @@
+---
+const { title, description, github } = Astro.props;
+import GitHubIcon from "../assets/github.svg";
+---
+
+<div class="card">
+    <h2>{title}</h2>
+
+    <p>{description}</p>
+
+    <a href={github} class="github">
+        <GitHubIcon />
+        Link
+    </a>
+</div>
