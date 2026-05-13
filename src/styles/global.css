@@ -1,22 +1,7 @@
-:root {
-    --bg: #11131a;
-    --bg-secondary: #161923;
-
-    --card: rgba(28, 32, 44, 0.75);
-
-    --border: rgba(120, 140, 255, 0.12);
-
-    --text: #f3f4f6;
-    --muted: #b4bac7;
-
-    --accent: #8b9dff;
-    --accent-hover: #a5b3ff;
-}
-
 html {
     font-family: Inter, system-ui, sans-serif;
-    background: var(--bg);
-    color: var(--text);
+    background: var(--background);
+    color: var(--on-background);
 }
 
 body {
@@ -35,7 +20,7 @@ h1 {
 }
 
 p {
-    color: var(--muted);
+    color: var(--on-surface-variant);
     line-height: 1.6;
 }
 
@@ -52,7 +37,7 @@ p {
 }
 
 .github:hover {
-    color: var(--accent);
+    color: var(--primary);
 }
 
 .github svg {
@@ -61,9 +46,9 @@ p {
 }
 
 .card {
-    background: var(--card);
+    background: var(--surface-container);
 
-    border: 1px solid var(--border);
+    border: 1px solid var(--outline);
 
     border-radius: 20px;
 
@@ -86,9 +71,9 @@ p {
 }
 
 .github {
-    color: var(--muted);
+    color: var(--on-surface-variant);
 }
 
 .github:hover {
-    color: var(--accent);
+    color: var(--primary);
 }
