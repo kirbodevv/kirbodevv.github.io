@@ -1,24 +1,27 @@
 ---
 import ProjectCard from "../components/ProjectCard.astro";
 import "../styles/global.css";
+import LayoutAstroComponent from "../layouts/Layout.astro";
 ---
 
-<div class="container">
-    <h1>Kirill Borisenko</h1>
+<LayoutAstroComponent>
+    <div class="container">
+        <h1>Kirill Borisenko</h1>
 
-    <p>Developer interested in backend, AI and game development.</p>
+        <p>Developer interested in backend, AI and game development.</p>
 
-    <div class="projects">
-        <ProjectCard
-            title="Cortex Runtime"
-            description="Extensible AI runtime with embedding-based memory, tool-calling system and support for CLI and planned HTTP tools."
-            github="https://github.com/kirbodevv/cortex-runtime"
-        />
+        <div class="projects">
+            <ProjectCard
+                title="Cortex Runtime"
+                description="Extensible AI runtime with embedding-based memory, tool-calling system and support for CLI and planned HTTP tools."
+                github="https://github.com/kirbodevv/cortex-runtime"
+            />
 
-        <ProjectCard
-            title="End Portal Calculator"
-            description="Minecraft datapack that triangulates stronghold portal coordinates by calculating the intersection point of two ender pearl trajectories."
-            github="https://github.com/kirbodevv/end-portal-calculator-dp"
-        />
+            <ProjectCard
+                title="End Portal Calculator"
+                description="Minecraft datapack that triangulates stronghold portal coordinates by calculating the intersection point of two ender pearl trajectories."
+                github="https://github.com/kirbodevv/end-portal-calculator-dp"
+            />
+        </div>
     </div>
-</div>
+</LayoutAstroComponent>
