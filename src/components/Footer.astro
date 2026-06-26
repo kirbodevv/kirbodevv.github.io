@@ -1,0 +1,57 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <span class="footer-copy">
+      © {year} Kirill Borisenko &mdash; Built with <a
+        href="https://astro.build"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="footer-link">Astro</a
+      >
+    </span>
+    <a href="#hero" class="footer-top">Back to top ↑</a>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--outline-variant);
+    padding: 2rem 0;
+  }
+
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-copy {
+    font-size: 0.85rem;
+    color: var(--on-surface-variant);
+  }
+
+  .footer-link {
+    color: var(--primary);
+    font-weight: 500;
+    transition: opacity 0.2s;
+  }
+
+  .footer-link:hover {
+    opacity: 0.7;
+  }
+
+  .footer-top {
+    font-size: 0.85rem;
+    color: var(--on-surface-variant);
+    transition: color 0.2s;
+  }
+
+  .footer-top:hover {
+    color: var(--primary);
+  }
+</style>
