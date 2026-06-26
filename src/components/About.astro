@@ -1,0 +1,125 @@
+---
+---
+
+<section id="about" class="about-section">
+  <div class="container about-grid">
+    <!-- Text -->
+    <div class="about-text">
+      <span class="section-label">Who I am</span>
+      <h2 class="section-title">About Me</h2>
+      <p class="section-body" style="margin-bottom: 1.25rem;">
+        I'm Kirill — a developer with a deep interest in
+        <strong>backend systems</strong>, <strong>artificial intelligence</strong>,
+        and <strong>game development</strong>. I enjoy building tools that are
+        both reliable and expressive.
+      </p>
+      <p class="section-body">
+        When I'm not writing server-side logic or experimenting with AI runtimes,
+        you'll find me crafting datapack mechanics in Minecraft or exploring new
+        game systems. I believe engineering and creativity aren't opposites — the
+        best tools are both correct and genuinely fun to use.
+      </p>
+    </div>
+
+    <!-- Code card -->
+    <div class="code-card card">
+      <div class="code-header">
+        <span class="traffic-dot red"></span>
+        <span class="traffic-dot yellow"></span>
+        <span class="traffic-dot green"></span>
+        <span class="code-filename">kirill.json</span>
+      </div>
+      <pre
+        class="code-body"><code>{`{
+  "name": "Kirill Borisenko",
+  "alias": "kirbodevv",
+  "focus": [
+    "Backend Systems",
+    "AI Engineering",
+    "Game Development"
+  ],
+  "location": "Remote",
+  "currently": "Building things",
+  "open_to": "Opportunities"
+}`}</code></pre>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-section {
+    padding: 7rem 0;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  strong {
+    color: var(--on-background);
+    font-weight: 600;
+  }
+
+  /* Code card */
+  .code-card {
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .code-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .code-header {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.8rem 1.25rem;
+    background: var(--surface-container-high);
+    border-bottom: 1px solid var(--outline-variant);
+  }
+
+  .code-filename {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--on-surface-variant);
+    margin-left: 0.4rem;
+  }
+
+  .traffic-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .traffic-dot.red {
+    background: #ff5f57;
+  }
+  .traffic-dot.yellow {
+    background: #ffbd2e;
+  }
+  .traffic-dot.green {
+    background: #28c840;
+  }
+
+  .code-body {
+    margin: 0;
+    padding: 1.6rem 1.75rem;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.875rem;
+    line-height: 1.85;
+    color: var(--on-surface);
+    overflow-x: auto;
+  }
+
+  @media (max-width: 800px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+</style>
