@@ -1,0 +1,70 @@
+---
+import ProjectCard from "./ProjectCard.astro";
+
+const projects = [
+  {
+    title: "Cortex Runtime",
+    description:
+      "Extensible AI runtime with embedding-based memory, tool-calling system, and support for CLI and planned HTTP integrations.",
+    github: "https://github.com/kirbodevv/cortex-runtime",
+    tags: ["Python", "AI", "LLM", "Embeddings", "CLI"],
+  },
+  {
+    title: "End Portal Calculator",
+    description:
+      "Minecraft datapack that triangulates stronghold portal coordinates by calculating the intersection point of two ender pearl trajectories.",
+    github: "https://github.com/kirbodevv/end-portal-calculator-dp",
+    tags: ["Minecraft", "Datapack", "mcfunction", "Game Dev"],
+  },
+];
+---
+
+<section id="projects" class="projects-section">
+  <div class="container">
+    <span class="section-label">What I've built</span>
+    <h2 class="section-title">Projects</h2>
+    <p class="section-body" style="margin-bottom: 2.75rem;">
+      A selection of things I've built. More on{" "}
+      <a
+        href="https://github.com/kirbodevv"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-link"
+      >
+        GitHub ↗
+      </a>.
+    </p>
+
+    <div class="projects-grid">
+      {projects.map((p) => <ProjectCard {...p} />)}
+    </div>
+  </div>
+</section>
+
+<style>
+  .projects-section {
+    padding: 7rem 0;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .inline-link {
+    color: var(--primary);
+    font-weight: 500;
+    transition: opacity 0.2s;
+  }
+
+  .inline-link:hover {
+    opacity: 0.7;
+  }
+
+  @media (max-width: 620px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
