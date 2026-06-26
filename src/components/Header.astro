@@ -1,0 +1,206 @@
+---
+---
+
+<header class="header" id="site-header">
+  <div class="container header-inner">
+    <a href="#hero" class="logo">
+      <span class="logo-accent">kirbo</span>devv
+    </a>
+
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+      <!-- Sun — visible in dark mode -->
+      <svg
+        class="icon-sun"
+        xmlns="http://www.w3.org/2000/svg"
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </svg>
+      <!-- Moon — visible in light mode -->
+      <svg
+        class="icon-moon"
+        xmlns="http://www.w3.org/2000/svg"
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById("theme-toggle");
+  const html = document.documentElement;
+
+  function getTheme(): string {
+    return html.classList.contains("dark") ? "dark" : "light";
+  }
+
+  function setTheme(theme: string): void {
+    html.classList.remove("dark", "light");
+    html.classList.add(theme);
+    try {
+      localStorage.setItem("theme", theme);
+    } catch (_) {}
+  }
+
+  toggle?.addEventListener("click", () => {
+    setTheme(getTheme() === "dark" ? "light" : "dark");
+  });
+
+  // Subtle header shadow on scroll
+  const header = document.getElementById("site-header");
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (header) {
+        header.classList.toggle("scrolled", window.scrollY > 16);
+      }
+    },
+    { passive: true }
+  );
+</script>
+
+<style>
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    background: color-mix(in srgb, var(--background) 75%, transparent);
+    border-bottom: 1px solid transparent;
+    transition:
+      background 0.3s ease,
+      border-color 0.3s ease;
+  }
+
+  .header.scrolled {
+    border-bottom-color: var(--outline-variant);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+
+  /* Logo */
+  .logo {
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--on-background);
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+
+  .logo:hover {
+    opacity: 0.65;
+  }
+
+  .logo-accent {
+    color: var(--primary);
+  }
+
+  /* Nav */
+  .nav {
+    display: flex;
+    gap: 0.15rem;
+  }
+
+  .nav-link {
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--on-surface-variant);
+    transition:
+      background 0.2s,
+      color 0.2s;
+  }
+
+  .nav-link:hover {
+    background: var(--surface-container-high);
+    color: var(--on-background);
+  }
+
+  /* Theme toggle */
+  .theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 999px;
+    border: 1.5px solid var(--outline-variant);
+    background: transparent;
+    color: var(--on-surface-variant);
+    cursor: pointer;
+    transition:
+      background 0.2s,
+      color 0.2s,
+      border-color 0.2s;
+    padding: 0;
+  }
+
+  .theme-toggle:hover {
+    background: var(--surface-container-high);
+    color: var(--on-background);
+    border-color: var(--outline);
+  }
+
+  /* Icon visibility — controlled by html class */
+  :global(.dark) .icon-sun {
+    display: block;
+  }
+  :global(.dark) .icon-moon {
+    display: none;
+  }
+  :global(.light) .icon-sun {
+    display: none;
+  }
+  :global(.light) .icon-moon {
+    display: block;
+  }
+
+  @media (max-width: 580px) {
+    .nav {
+      display: none;
+    }
+  }
+</style>
