@@ -3,6 +3,13 @@ import ProjectCard from "./ProjectCard.astro";
 
 const projects = [
     {
+        title: "S.A.U.W.",
+        description:
+            "A game written in Rust using Bevy, featuring procedural world generation and exploration.",
+        github: "https://github.com/kirbodevv/sauw",
+        tags: ["Rust", "Bevy", "Game"],
+    },
+    {
         title: "Cortex Runtime",
         description:
             "Extensible AI runtime with embedding-based memory, tool-calling system, and support for CLI and planned HTTP integrations.",
@@ -10,11 +17,11 @@ const projects = [
         tags: ["Rust", "AI", "LLM", "Embeddings", "CLI"],
     },
     {
-        title: "End Portal Calculator",
+        title: "Sectcraft Backend",
         description:
-            "Minecraft datapack that triangulates stronghold portal coordinates by calculating the intersection point of two ender pearl trajectories.",
-        github: "https://github.com/kirbodevv/end-portal-calculator-dp",
-        tags: ["Minecraft", "Datapack", "mcfunction", "Game Dev"],
+            "A Rust backend for a multiplayer community platform, providing team management, real-time communication, and shared calendars.",
+        github: "https://github.com/kirbodevv/sectcraft-backend",
+        tags: ["Rust", "Backend", "API"],
     },
 ];
 ---
